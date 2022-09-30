@@ -25,8 +25,10 @@ public class C01_MavenIlktest {
         driver.findElement(By.xpath("//*[@id='twotabsearchtextbox']")).sendKeys("Samsung headphones");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id='nav-search-submit-button']")).click();
-        WebElement sonuc=driver.findElement(By.xpath("(//*[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
-        System.out.println("ARAMA SONUC SAYİSİ: "+sonuc.getText());
+        //WebElement sonuc=driver.findElement(By.xpath("(//*[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
+        //System.out.println("ARAMA SONUC SAYİSİ: "+sonuc.getText());
+        String [] sonuc=driver.findElement(By.xpath("(//*[@class='a-section a-spacing-small a-spacing-top-small'])[1]")).getText().split(" ");
+        System.out.println("Samsung headphones arama sonucu: "+sonuc[2]);
         driver.findElement(By.xpath("//*[@class='a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal']")).click();
         System.out.println("Basliklar: \n"+driver.getTitle());
         driver.close();
